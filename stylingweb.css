@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;  /* this is for the scrolling of image in right direction */
+    overflow-y: auto;/* this will be auto scroll or content in the y direction*/
+    perspective: 11px;/* to make 3d present we should on the perspective */
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;/*these two are for aligning the content or image in the center */
+    align-items: center;
+    height: 100%;
+    z-index: -1;
+    transform-style: preserve-3d;
+    
+}
+
+.background{
+    transform: translateZ(-40px) scale(5);/* here we given the bg image of based on perspective and according to our convenience we 
+    scaled it so that it will be in the perspective of 3d to the user.*/
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+
+.background,.foreground{
+    position: absolute;/* for overlapping of background and foreground image*/
+    height: 100%;
+    width: 100%;
+    z-index: -1;/*for overlapping on one other in the z direction 3d one*/
+    object-fit: cover;
+}
+h1{
+    position: absolute;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 4px;
+    font-size: 10rem;
+    color: white;
+    text-shadow: 0 0 11px rgba(0,0,0,3);
+
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.subheading{
+    position: absolute;
+    background-color: white;
+    padding: 0.6rem 2.5rem;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateX(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font: weight 600; ;
+}
+
+.secheading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+.textareaa{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    height: 500px;
+    background-size: cover;
+}
